@@ -87,6 +87,10 @@ img.logo{
 .tournament-stats p{
     margin-bottom: 0;
 }
+
+.tournament_label{
+    display: block;
+}
 .team-stats{
     grid-column: 1 / 2;
 }

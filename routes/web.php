@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\UpcomingTournamentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,6 @@ use App\Http\Controllers\TeamController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/test', [HomeController::class, 'test'])->name('test');
 Route::get('/tournaments', [TournamentController::class, 'index'])->name('tournaments.index');
 Route::get('/tournaments/create', [TournamentController::class, 'create'])->name('tournaments.create');
 Route::post('/tournaments', [TournamentController::class, 'store'])->name('tournaments.store');
@@ -26,3 +26,7 @@ Route::get('/tournaments/{tournament}/edit', [TournamentController::class, 'edit
 Route::put('/tournaments/{tournament}', [TournamentController::class, 'update'])->name('tournaments.update');
 
 Route::get('/teams', [TeamController::class, 'index'])->name('teams.index');
+Route::get('/teams/create', [TeamController::class, 'create'])->name('teams.create');
+Route::post('/teams', [TeamController::class, 'store'])->name('teams.store');
+
+Route::get('/upcoming', [UpcomingTournamentController::class, 'show'])->name('upcoming.show');
